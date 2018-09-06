@@ -1,16 +1,26 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <NavBar />
     <router-view/>
+    <Footer />
   </div>
 </template>
 
+<script>
+import Footer from "@/components/footer/Footer.vue";
+import NavBar from "@/components/navbar/NavBar.vue";
+
+export default {
+  name: "App",
+  components: {
+    Footer,
+    NavBar
+  }
+};
+</script>
+
 <style lang="scss">
 @import "../node_modules/bulma/bulma.sass";
-
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
 import TodoListItem from "./todoListItem/TodoListItem.vue";
 
 export default {
@@ -25,15 +26,9 @@ export default {
   components: {
     TodoListItem
   },
-  methods: {
-    changeStatus: function(label) {
-      this.$store.commit("changeStatus", label);
-    }
-  },
-  computed: {
-    todoList() {
-      return this.$store.state.todoList;
-    }
-  }
+  methods: mapActions("TodoList", ["changeStatus"]),
+  computed: mapState({
+    todoList: state => state.TodoList.todoList
+  })
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="sectionNoPaddingTop">
     <div class="container">
       <TodoList />
     </div>
@@ -10,7 +10,7 @@
 import TodoList from "@/components/todoList/TodoList.vue";
 
 export default {
-  name: "home",
+  name: "HomeScreen",
   components: { TodoList }
 };
 </script>

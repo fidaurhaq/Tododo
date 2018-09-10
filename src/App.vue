@@ -73,4 +73,9 @@ export default {
     transform: rotate(1800deg);
   }
 }
+
+.sectionNoPaddingTop {
+  @extend .section;
+  padding-top: 0px;
+}
 </style>

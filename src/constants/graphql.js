@@ -9,3 +9,11 @@ export const ALL_TODOES_QUERY = gql`
     }
   }
 `;
+
+export const CREATE_TODO_MUTATION = gql`
+  mutation CreateTodoMutation($label: String!, $doneStatus: Boolean = false) {
+    createTodo(label: $label, doneStatus: $doneStatus) {
+      id
+    }
+  }
+`;

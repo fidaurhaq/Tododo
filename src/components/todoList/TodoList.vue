@@ -18,7 +18,6 @@
 </template>
 
 <script>
-//import { mapState, mapActions } from "vuex";
 import TodoListItem from "./todoListItem/TodoListItem.vue";
 import { ALL_TODOES_QUERY } from "@/constants/graphql";
 
@@ -33,13 +32,6 @@ export default {
       loading: 0
     };
   },
-  // methods: mapActions("TodoList", ["changeStatus"]),
-  // computed: mapState({
-  //   todoList: state => state.TodoList.todoList
-  // }),
-  // mounted() {
-  //   this.$store.dispatch("TodoList/getTodoList");
-  // },
   apollo: {
     allTodoes: {
       query: ALL_TODOES_QUERY

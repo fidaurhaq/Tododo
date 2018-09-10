@@ -1,10 +1,6 @@
 //Initial State
 const state = {
-  todoList: [
-    { id: 0, label: "Make a vue project", status: true },
-    { id: 0, label: "Do some badass things in vue", status: false },
-    { id: 0, label: "World domination", status: false }
-  ]
+  todoList: []
 };
 
 // mutations
@@ -13,6 +9,9 @@ const mutations = {
     state.todoList.map(element => {
       element.label === label ? (element.status = !element.status) : null;
     });
+  },
+  setTodoList(state, data) {
+    state.todoList = data;
   }
 };
 
@@ -21,8 +20,12 @@ const getters = {};
 
 // actions
 const actions = {
-  changeStatus({ commit }, label) {
-    commit("changeStatus", label);
+  getTodoList({ commit }) {
+    fetch("http://rest.learncode.academy/api/vuetest/todolist")
+      .then(response => response.json())
+      .then(data => {
+        commit("setTodoList", data);
+      });
   }
 };
 

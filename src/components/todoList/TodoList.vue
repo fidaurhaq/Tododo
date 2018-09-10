@@ -29,6 +29,9 @@ export default {
   methods: mapActions("TodoList", ["changeStatus"]),
   computed: mapState({
     todoList: state => state.TodoList.todoList
-  })
+  }),
+  mounted() {
+    this.$store.dispatch("TodoList/getTodoList");
+  }
 };
 </script>

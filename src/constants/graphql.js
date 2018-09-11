@@ -17,3 +17,20 @@ export const CREATE_TODO_MUTATION = gql`
     }
   }
 `;
+
+export const UPDATE_TODO_MUTATION = gql`
+  mutation UpdateTodoMutation($id: ID!, $label: String, $doneStatus: Boolean!) {
+    updateTodo(id: $id, label: $label, doneStatus: $doneStatus) {
+      id
+      doneStatus
+    }
+  }
+`;
+
+export const DELETE_TODO_MUTATION = gql`
+  mutation DeleteTodoMutation($id: ID!) {
+    deleteTodo(id: $id) {
+      id
+    }
+  }
+`;
